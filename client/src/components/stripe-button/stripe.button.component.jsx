@@ -8,19 +8,20 @@ const TheStripeCheckoutButton = ({ price }) => {
     const priceForStripe = price * 100;
     const publishableKey = 'pk_test_51HsU13KfqoJqYlMIjzYUCqOrTK2ir9667kEP2SuxLc7GeSuuskLd2TTxty4vdflHDCRCnPpUuOYqoygZMGb1OQ4G00jxacetm0'
 
-    const onToken = token => {
+    const onToken = (token) => {
         axios({
             url:'payment',
             method: 'post',
             data: {
                 amount: priceForStripe,
-                token
+                token,
+                metadata: {this: "that"}
             }
         }).then(response => {
             alert('Payment Successful');
         }).catch(error => {
             console.log("Payment error :", JSON.parse(error));
-            alert('There was an issue with your payment')
+            alert('There was an issue with your payment, please try again or contact us for a solution')
         })
     }
     

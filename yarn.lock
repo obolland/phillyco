@@ -129,6 +129,26 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@iconify/icons-brandico@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-brandico/-/icons-brandico-1.1.0.tgz#8a6b8b3c67f967b067b207985974fa6cad984984"
+  integrity sha512-POyskswytrlbekUamxdGNvYvCDg2Fa1mn7MNvcgOe1hIoDo48g5HRUE4nFqsoE/n0WftD0oX8fJaRWQjYQi2+w==
+
+"@iconify/icons-openmoji@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-openmoji/-/icons-openmoji-1.1.0.tgz#c3cf2ff02ab5cd678a9905e37b741479f5c833cc"
+  integrity sha512-6u1N66jK/vz8cZfI4uLI4IkPiSfh3d5VolWPNw9tWx2ALVhc0Y5/vr/IMwzEAOu5WstQWKqnEAh0ivGRIrMosw==
+
+"@iconify/icons-ph@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-ph/-/icons-ph-1.1.1.tgz#bf88cca9a0c6069e86cad6d2d30c6c68f19863ae"
+  integrity sha512-JaT6jss9Jc6DY9Gid5dzJQainWV5gYxvIlTfT7TG6gSZnj+WCqgj/2asocDSy0Io1WGsQJOuYw289zmOw4l09w==
+
+"@iconify/react@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-1.1.3.tgz#ebe4d3e5f5dea23cd6a9634acd7a0a25c7414a59"
+  integrity sha512-ReZNJyr89AfED6XZIXkhsJiNv2taT3j1cTo1HVPHMsrKOz6gAYdXtD2kDWF6+GVoFUxpmnO0fMcA6yCyTf6Tow==
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -676,6 +696,11 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
+
+emailjs-com@^2.6.4:
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/emailjs-com/-/emailjs-com-2.6.4.tgz#c3bac8f7ee58d536ab34923e73013ad39f299f46"
+  integrity sha512-4G8rxq+1mbL4rGntMa9tqNJ4N9BhuCl8lFJASDHxZVXeC82ivwL6qw+Zu48cAWHpNK2/F3vScaAZk8zoTAfiAA==
 
 encodeurl@~1.0.2:
   version "1.0.2"
