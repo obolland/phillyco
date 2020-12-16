@@ -1,5 +1,5 @@
 {
-  "name": "clothing-server",
+  "name": "phillyco-server",
   "version": "1.0.0",
   "engines": {
     "node": "14.15.1",
@@ -22,7 +22,8 @@
     "emailjs-com": "^2.6.4",
     "express": "^4.16.4",
     "stripe": "6.28.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@iconify/icons-brandico": "^1.1.0",

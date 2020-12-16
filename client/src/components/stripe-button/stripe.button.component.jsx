@@ -1,45 +1,45 @@
 import React from 'react';
 
-import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
-import StripeCheckout from 'react-stripe-checkout';
+import {connect} from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import {selectCurrentUser} from '../../redux/user/user.selectors';
+import CustomButton from '../custom-button/custom-button.component';
 
-const TheStripeCheckoutButton = ({ price }) => {
-    const priceForStripe = price * 100;
-    const publishableKey = 'pk_test_51HsU13KfqoJqYlMIjzYUCqOrTK2ir9667kEP2SuxLc7GeSuuskLd2TTxty4vdflHDCRCnPpUuOYqoygZMGb1OQ4G00jxacetm0'
+import {ButtonContainer} from './stripe.button.styles';
 
-    const onToken = (token) => {
-        axios({
-            url:'payment',
-            method: 'post',
-            data: {
-                amount: priceForStripe,
-                token,
-                metadata: {this: "that"}
-            }
-        }).then(response => {
-            alert('Payment Successful');
-        }).catch(error => {
-            console.log("Payment error :", JSON.parse(error));
-            alert('There was an issue with your payment, please try again or contact us for a solution')
-        })
+const StripeCheckoutButton = ( {handleClick, isSignedIn } ) => {
+      
+    let history = useHistory();
+      
+    const handleCreateAccountClick = () => {
+        history.push("/SignIn");
     }
     
+
     return (
-        <StripeCheckout 
-            label='Pay Now'
-            name='Clths Clothing Ltd'
-            billingAddress
-            shippingAddress
-            currency='GBP'
-            image='https://sendeyo.com/up/d/f3eb2117da'
-            description={`Your total is £${price}`}
-            amount={priceForStripe}
-            panelLabel='Pay Now'
-            token={onToken}
-            stripeKey={publishableKey}
-        />
-    )
+          isSignedIn ? (
+            <CustomButton id="checkout-button" role="link" onClick={handleClick}>
+            Checkout
+            </CustomButton>
+          ) :
+          (
+            <ButtonContainer>
+            <CustomButton onClick={handleCreateAccountClick} margin>
+            Create Account
+            </CustomButton>
+
+            <CustomButton id="checkout-button" role="link" onClick={handleClick}>
+            Checkout As Guest
+            </CustomButton>
+            </ButtonContainer> 
+          )
+      )
 }
 
-export default TheStripeCheckoutButton;
+const mapStateToProps = createStructuredSelector({
+    isSignedIn: selectCurrentUser
+  });
+
+export default connect(mapStateToProps)(StripeCheckoutButton);
