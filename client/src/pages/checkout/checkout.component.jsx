@@ -14,6 +14,8 @@ import {
   selectCartTotal
 } from '../../redux/cart/cart.selectors';
 
+import {emptyCart} from '../../redux/cart/cart.actions';
+
 import {
   CheckoutPageContainer,
   CheckoutHeaderContainer,
@@ -24,7 +26,7 @@ import {
 
 const stripePromise = loadStripe("pk_test_51HyeIDAxgCFzf4P5rxdxA4ySaIq9fggg5nFFMX0DfYieCRejAkDsMyqTn4CRp2jTkqkfsAhid9EhYBiAnfwGIwDu00TPPoRkAk");
 
-const CheckoutPage = ({ cartItems, total }) => {
+const CheckoutPage = ({ cartItems, total, emptyCart }) => {
   const [message, setMessage] = useState("");
 
   const handleClick = async (event) => {
@@ -55,11 +57,12 @@ const CheckoutPage = ({ cartItems, total }) => {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
     if (query.get("success")) {
-      setMessage("Order placed! You will receive an email confirmation.");
+      setMessage("Order recieved! Thank you for shopping with us, see you next time.");
+      emptyCart();
     }
-  }, []);
+  }, [emptyCart]);
 
-return message ? (<Message message={message} />) 
+return message ? (<Message message={message} /> ) 
   : (
   <CheckoutPageContainer>
     <CheckoutHeaderContainer>
@@ -97,4 +100,8 @@ const mapStateToProps = createStructuredSelector({
   total: selectCartTotal
 });
 
-export default connect(mapStateToProps)(CheckoutPage);
+const mapDispatchToProps = dispatch => ({
+  emptyCart: () => dispatch(emptyCart())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutPage);
