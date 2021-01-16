@@ -36,11 +36,12 @@ app.post('/checkout-data', (req, res) => {
       quantity: item.quantity,
     }
   });
-    res.send('Data Added Successfuly')
+    res.send('Checkout data Added Successfuly')
 })
 
 
-const YOUR_DOMAIN = 'http://localhost:3000/checkout';
+const YOUR_DOMAIN = process.env.NODE_ENV !== "production" ? 
+'http://localhost:3000/checkout' : 'https://phillyco-live.herokuapp.com/checkout';
 
 app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
