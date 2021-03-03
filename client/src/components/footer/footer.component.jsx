@@ -17,7 +17,7 @@ const Footer = () => (
             PhillyCo© All Rights Reserved
         </CopyrightContainer>
         <TheCreatorContainer>
-            Created by ollybolland.com
+        <a href="https://ollybolland.com" target="_blank">Created by ollybolland.com</a>
         </TheCreatorContainer>
     </FooterContainer>
 )
