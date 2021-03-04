@@ -15,7 +15,7 @@ const AboutPage = () => (
           carbon neutral materials and zero plastic in our packaging, so you can look 
           after the planet whilst looking cool AF doing it. All the graphics are first on paper, 
           before being screen printed on to our quality materials. 
-          This is clothing for those with freedom in their hearts and fire in their souls.<br />Live free.
+          This is clothing for those with freedom in their hearts and fire in their souls.<br/><u>Live free</u>
         </MainText>
     </AboutPageContainer>
 );

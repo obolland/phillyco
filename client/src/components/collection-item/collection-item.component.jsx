@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import { addItem } from '../../redux/cart/cart.actions';
+
+import PhotoBox from '../../components/lightbox/lightbox.component';
 
 import {
   CollectionItemContainer,
@@ -14,10 +16,19 @@ import {
 
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
+  const [isPhotoBoxOpen, setIsPhotoBoxOpen] = useState(false)
+
+  const clickHandler = () => {
+    setIsPhotoBoxOpen(true)
+  }
 
   return (
     <CollectionItemContainer>
-      <BackgroundImage className='image' imageUrl={imageUrl} />
+      <BackgroundImage
+        onClick={clickHandler}
+        className='image'
+        imageUrl={imageUrl} 
+      />
       <CollectionFooterContainer>
         <NameContainer>{name}</NameContainer>
         <PriceContainer>£{price}</PriceContainer>
@@ -25,6 +36,7 @@ const CollectionItem = ({ item, addItem }) => {
       <AddButton onClick={() => addItem(item)} inverted>
         Add to cart
       </AddButton>
+      <PhotoBox isPhotoBoxOpen={isPhotoBoxOpen} setIsPhotoBoxOpen={setIsPhotoBoxOpen} images={item.images} />
     </CollectionItemContainer>
   );
 };

@@ -4,19 +4,19 @@ const INITIAL_STATE = {
           title: 'prints',
           imageUrl: 'https://i.lensdump.com/i/I1jed0.png',
           id: 1,
-          linkUrl: 'shop/hats'
+          linkUrl: 'shop/prints'
         },
         {
           title: 't-shirts', 
           imageUrl: 'https://i2.lensdump.com/i/I1jobQ.jpg',
           id: 2,
-          linkUrl: 'shop/jackets'
+          linkUrl: 'shop/t-shirts'
         },
         {
           title: 'lifestyle',
           imageUrl: 'https://i2.lensdump.com/i/I1jvaq.jpg',
           id: 3,
-          linkUrl: 'shop/sneakers'
+          linkUrl: 'shop/lifestyle'
         },
         {
           title: 'womens',

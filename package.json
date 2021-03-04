@@ -21,6 +21,7 @@
     "dotenv": "7.0.0",
     "emailjs-com": "^2.6.4",
     "express": "^4.16.4",
+    "react-image-lightbox": "^5.1.1",
     "stripe": "6.28.0",
     "styled-components": "^5.2.1",
     "uuid": "^8.3.2"
