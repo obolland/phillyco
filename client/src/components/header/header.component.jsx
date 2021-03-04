@@ -32,7 +32,7 @@ const Header = ({ currentUser, hidden }) => (
       <SocialMedia visibility>
         <a target="_blank" href="https://instagram.com/pipbolland"><Icon icon={instagramLogoLight} /></a>
       </SocialMedia>
-      <OptionLink to='/shop'>SHOP</OptionLink>
+      {/* <OptionLink to='/shop'>SHOP</OptionLink> */}
       <OptionLink to='/about'>ABOUT</OptionLink>
       <OptionLink to='/contact'>CONTACT</OptionLink>
       {currentUser ? (
