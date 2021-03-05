@@ -24,6 +24,7 @@ import {
   WarningContainer
 } from './checkout.styles';
 
+//note add in .env
 const stripePromise = loadStripe("pk_test_51HyeIDAxgCFzf4P5rxdxA4ySaIq9fggg5nFFMX0DfYieCRejAkDsMyqTn4CRp2jTkqkfsAhid9EhYBiAnfwGIwDu00TPPoRkAk");
 
 const CheckoutPage = ({ cartItems, total, emptyCart }) => {

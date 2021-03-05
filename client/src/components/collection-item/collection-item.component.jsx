@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import { addItem } from '../../redux/cart/cart.actions';
 
-import PhotoBox from '../../components/lightbox/lightbox.component';
+import PhotoBox from '../lightbox/lightbox.component';
+import SizeModel from '../size-model/sizeModel.component';
 
 import {
   CollectionItemContainer,
@@ -11,21 +12,26 @@ import {
   AddButton,
   BackgroundImage,
   NameContainer,
-  PriceContainer,
+  PriceContainer
 } from './collection-item.styles';
 
 const CollectionItem = ({ item, addItem }) => {
-  const { name, price, imageUrl } = item;
+  const { name, price, imageUrl, size } = item;
   const [isPhotoBoxOpen, setIsPhotoBoxOpen] = useState(false)
+  const [modal, setModal] = useState(false);
 
-  const clickHandler = () => {
+  const photoBoxClickHandler = () => {
     setIsPhotoBoxOpen(true)
+  }
+
+  const addToCartClickHandler = () => {
+    size ? setModal(true) : addItem(item)
   }
 
   return (
     <CollectionItemContainer>
       <BackgroundImage
-        onClick={clickHandler}
+        onClick={photoBoxClickHandler}
         className='image'
         imageUrl={imageUrl} 
       />
@@ -33,10 +39,15 @@ const CollectionItem = ({ item, addItem }) => {
         <NameContainer>{name}</NameContainer>
         <PriceContainer>£{price}</PriceContainer>
       </CollectionFooterContainer>
-      <AddButton onClick={() => addItem(item)} inverted>
+      <AddButton onClick={addToCartClickHandler} inverted>
         Add to cart
       </AddButton>
-      <PhotoBox isPhotoBoxOpen={isPhotoBoxOpen} setIsPhotoBoxOpen={setIsPhotoBoxOpen} images={item.images} />
+      <PhotoBox
+        isPhotoBoxOpen={isPhotoBoxOpen}
+        setIsPhotoBoxOpen={setIsPhotoBoxOpen}
+        images={item.images ? item.images : [imageUrl]}
+      />
+      <SizeModel modal={modal} setModal={setModal} item={item} addItem={addItem}/>
     </CollectionItemContainer>
   );
 };
