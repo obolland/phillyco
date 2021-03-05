@@ -18,7 +18,7 @@ const SizeModel = ({ modal, setModal, item, addItem }) => {
         <ModalHeader toggle={toggle}>Select your size</ModalHeader>
         <ModalBody>
           Select your size blah blah blah
-          <SizeDropdown />
+          <SizeDropdown item={item}/>
         </ModalBody>
         <ModalFooter>
           <AddButton onClick={() => addItem(item) && setModal(false)}>Add to cart</AddButton>
