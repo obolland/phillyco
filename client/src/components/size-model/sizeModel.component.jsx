@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import {AddButton} from './sizeModel.styles';
 import SizeDropdown from '../size-dropdown/sizeDropdown.component';
@@ -9,8 +9,17 @@ import { addItem } from '../../redux/cart/cart.actions';
 
 
 const SizeModel = ({ modal, setModal, item, addItem }) => {
+  const [dropdownValue, setDropdownValue] = useState('select size');
   
   const toggle = () => setModal(!modal);
+
+  const handleClick = (e) => {
+    setDropdownValue(e.currentTarget.textContent)
+  }
+
+  const newItem = (item) => {
+    return {...item, selectedSize: dropdownValue}
+  }
 
   return (
     <div>
@@ -18,10 +27,10 @@ const SizeModel = ({ modal, setModal, item, addItem }) => {
         <ModalHeader toggle={toggle}>Select your size</ModalHeader>
         <ModalBody>
           Select your size blah blah blah
-          <SizeDropdown item={item}/>
+          <SizeDropdown item={item} handleClick={handleClick} dropdownValue={dropdownValue}/>
         </ModalBody>
         <ModalFooter>
-          <AddButton onClick={() => addItem(item) && setModal(false)}>Add to cart</AddButton>
+          <AddButton onClick={() => addItem(newItem(item)) && setModal(false)}>Add to cart</AddButton>
           <Button color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
@@ -30,7 +39,7 @@ const SizeModel = ({ modal, setModal, item, addItem }) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addItem: item => dispatch(addItem(item))
+  addItem: newItem => dispatch(addItem(newItem))
 });
 
 export default connect(
