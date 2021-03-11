@@ -43,10 +43,15 @@ export const Title = styled.h1`
 `
 
 export const MainText = styled.p`
-  font-size: 28px;
+  font-size: 22px;
   text-align: center;
+  border-bottom: solid black 1px;
+  padding-bottom: 20px;
 `
 
 export const MainTextTitle = styled.h1`
   text-align: center;
+  font-size: 48px;
+  border-top: solid black 1px;
+  padding-top: 10px;
 `

@@ -19,17 +19,20 @@ export const CollectionItemContainer = styled.div`
   }
 
   @media screen and (max-width: 800px) {
-      width: 40vw;
+    width: 40vw;
 
-      &:hover {
-    .image {
-      opacity: unset;
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+      button {
+        opacity: unset;
+      }
     }
-    button {
-      opacity: unset;
+    @media screen and (max-width: 480px) {
+      width: 80vw;
     }
   }
-    }
 `;
 
 

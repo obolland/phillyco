@@ -54,6 +54,8 @@ const CheckoutPage = ({ cartItems, total, emptyCart }) => {
     }
   };
 
+  
+
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
@@ -61,7 +63,9 @@ const CheckoutPage = ({ cartItems, total, emptyCart }) => {
       setMessage("Order recieved! Thank you for shopping with us, see you next time.");
       emptyCart();
     }
+      
   }, [emptyCart]);
+
 
 return message ? (<Message message={message} /> ) 
   : (

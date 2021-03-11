@@ -1,0 +1,14 @@
+.modal-body {
+  display: flex !important;
+  justify-content: space-between;
+  padding: 20px 20px !important;
+
+  .btn {
+    width: 150px;
+    max-height: 50px;
+  }
+}
+
+.modal-footer {
+  justify-content: space-around !important;
+}

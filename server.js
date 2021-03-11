@@ -2,6 +2,7 @@
 const cors = require('cors');
 const express = require('express');
 const path = require('path');
+// const firestore = require('./client/src/firebase/firebase.utils')
 
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
@@ -29,6 +30,7 @@ app.post('/checkout-data', (req, res) => {
           currency: 'gbp',
           product_data: {
             name: item.name,
+            description: item.selectedSize,
             images: [item.imageUrl],
           },
           unit_amount: item.price * 100,
@@ -55,5 +57,11 @@ app.post('/create-checkout-session', async (req, res) => {
     cancel_url: `${YOUR_DOMAIN}?canceled=true`,
   });
   res.json({ id: session.id });
+
 });
+
+  // const updateQuantity = firestore.collection('collections').doc('hJf1KZCGqTnTyTJRbVju');
+  // const resp = await updateQuantity.update({size: {large: 9}});
+  // console.log(resp)
+
 app.listen(port, () => console.log(`Running on port ${port}`));

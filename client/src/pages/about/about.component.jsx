@@ -8,7 +8,7 @@ const AboutPage = () => (
         <AboutPageImage src='https://i1.lensdump.com/i/I1jnLD.jpg' alt='' />
         <Title>A<u>BOUT U</u>S</Title>
         <MainText>
-          <MainTextTitle>Sustainability, without compromise</MainTextTitle>
+          <MainTextTitle className='mt-5'>Sustainability, without compromise</MainTextTitle>
           Nothing beats the great outdoors and the smell of adventure in the air. 
           We have so much respect for this insane planet and what it has to offer us, 
           that we want to do what we can to support it. Our aim is to use sustainable, 

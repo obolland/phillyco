@@ -22,4 +22,8 @@ export const CollectionItemsContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-gap:15px;
   }
+  @media screen and (max-width: 480px) {
+    grid-template-columns: 1fr;
+    grid-gap:15px;
+  }
 `;
