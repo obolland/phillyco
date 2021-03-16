@@ -16,14 +16,11 @@ export const OptionsContainer = styled.div`
     @media screen and (max-width: 800px){
         text-align: center;
         font-size: 0.9rem;
+        margin-right: 10px;
     }
 `
 
 export const OptionLink = styled(Link)`
-
-    @media screen and (max-width: 800px){
-
-    }
 `;
 
 export const TheCreatorContainer = styled.div`
@@ -31,6 +28,7 @@ export const TheCreatorContainer = styled.div`
     @media screen and (max-width: 800px){
         text-align: center;
         font-size: 0.9rem;
+        margin-left: 10px;
     }
 `
 
@@ -39,5 +37,7 @@ export const CopyrightContainer = styled.div`
     @media screen and (max-width: 800px){
         text-align: center;
         font-size: 0.9rem;
+        margin-right: 10px;
+        margin-left: 10px;
     }
 `
