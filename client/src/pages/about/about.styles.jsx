@@ -31,7 +31,7 @@ export const Title = styled.h1`
     } 
 `
 
-export const MainText = styled.p`
+export const MainText = styled.div`
   font-size: 22px;
   text-align: center;
   //border-bottom: solid black 1px;

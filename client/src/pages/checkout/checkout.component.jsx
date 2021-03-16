@@ -20,7 +20,6 @@ import {
   CheckoutPageContainer,
   CheckoutHeaderContainer,
   HeaderBlockContainer,
-  WarningContainer,
   TotalsContainer
 } from './checkout.styles';
 
@@ -98,27 +97,31 @@ return message ? (<Message message={message} /> )
     <TotalContainer>TOTAL: £{_total}</TotalContainer> */}
     { cartItems[0] &&
       <TotalsContainer>
-      <tr>
-        <th className='smaller'>SUB-TOTAL:</th>
-        <td className='smaller'>£{subTotal}</td>
-      </tr>
-      <tr>
-        <th className='smaller'>DELIVERY:</th>
-        <td className='smaller'>£{deliveryCost + '0'}</td>
-      </tr>
-      <tr>
-        <th>TOTAL:</th>
-        <td>£{_total}
-        </td>
-      </tr>
+        <table>
+          <tbody>
+            <tr>
+              <th className='smaller'>SUB-TOTAL:</th>
+              <td className='smaller'>£{subTotal}</td>
+            </tr>
+            <tr>
+              <th className='smaller'>DELIVERY:</th>
+              <td className='smaller'>£{deliveryCost + '0'}</td>
+            </tr>
+            <tr>
+              <th>TOTAL:</th>
+              <td>£{_total}
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </TotalsContainer>
     }
     <StripeCheckoutButton handleClick={handleClick} />
-    <WarningContainer>
+    {/* <WarningContainer>
       *Please use the following test credit card for payments*
       <br />
       4000 0582 6000 0005 - Exp: 01/22 - CVV: 123
-    </WarningContainer>
+    </WarningContainer> */}
   </CheckoutPageContainer>
 )};
 

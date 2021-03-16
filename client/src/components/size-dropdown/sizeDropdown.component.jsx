@@ -13,14 +13,25 @@ const SizeDropdown = ({ item, dropdownValue, handleClick }) => {
       </DropdownToggle>
       <DropdownMenu>
         <DropdownItem
+          className={`${item.size.xsmall === 0 || !item.size.xsmall ? 'disabled' : null }`}
+          onClick={handleClick}>Xsmall
+        </DropdownItem>
+        <DropdownItem
           className={`${item.size.small === 0 || !item.size.small ? 'disabled' : null }`}
-          onClick={handleClick}>Small</DropdownItem>
+          onClick={handleClick}>Small
+        </DropdownItem>
         <DropdownItem 
           className={`${item.size.medium === 0 || !item.size.medium ? 'disabled' : null }`}
-          onClick={handleClick}>Medium</DropdownItem>
+          onClick={handleClick}>Medium
+        </DropdownItem>
         <DropdownItem
           className={`${item.size.large === 0 || !item.size.large ? 'disabled' : null }`}
-          onClick={handleClick}>Large</DropdownItem>
+          onClick={handleClick}>Large
+        </DropdownItem>
+        <DropdownItem
+          className={`${item.size.xlarge === 0 || !item.size.xlarge ? 'disabled' : null }`}
+          onClick={handleClick}>XLarge
+        </DropdownItem>
       </DropdownMenu>
     </Dropdown>
   );

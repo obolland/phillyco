@@ -11,7 +11,7 @@ export const AddButton = styled(CustomButton)`
   }
   `
 
-export const ModalText = styled.p`
+export const ModalText = styled.div`
   display: flex;
   width: 60%;
   margin-left: 15px;

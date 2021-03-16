@@ -31,7 +31,7 @@ const SizeModel = ({ modal, setModal, item, addItem }) => {
           <SizeDropdown item={item} handleClick={handleClick} dropdownValue={dropdownValue}/>
           <ModalText>
             { item.title === 'prints' ?
-            <p>
+            <div>
               <ul>
                 <li>Small - A5 - £9.99</li>
                 <li>Medium - A4 - £15.99</li>
@@ -40,9 +40,9 @@ const SizeModel = ({ modal, setModal, item, addItem }) => {
               All prints are hand drawn and printed on 270gsm, white velvet archival paper for a crisp,
               detailed finish with a minimalist feel.<br/>
               Additional details about the item and sizes can be found by scrolling through the item's photos.
-            </p>
+            </div>
             :
-            <p>
+            <div>
               <ul>
                 <li>Screen Printed with Eco-Friendly Inks</li>
                 <li>CO2 Climate Neutral</li>
@@ -52,7 +52,7 @@ const SizeModel = ({ modal, setModal, item, addItem }) => {
               a durable, breathable and sustainable material with a comfortable, relaxed feel.<br/>
               All artwork is original and hand-drawn.<br/>
               Additional details about the item, sizes and fit can be found by scrolling through the item's photos.
-            </p>
+            </div>
             }
           </ModalText>
         </ModalBody>

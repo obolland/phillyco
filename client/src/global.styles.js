@@ -13,6 +13,10 @@ body {
   a {
     text-decoration: none;
     color: black;
+    :hover {
+      text-decoration: none;
+      color: #485d85;
+    }
   }
   
   * {

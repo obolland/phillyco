@@ -57,18 +57,18 @@ export const DeliveryContainer = styled.div`
   font-size: 30px;
 `;
 
-export const WarningContainer = styled.div`
-  text-align: center;
-  margin-top: 40px;
-  font-size: 24px;
-  color: red;
-`;
+// export const WarningContainer = styled.div`
+//   text-align: center;
+//   margin-top: 40px;
+//   font-size: 24px;
+//   color: red;
+// `;
 
 export const TotalsContainer = styled.div`
 margin-left: auto;
 margin-top: 30px;
 font-size: 30px;
-  th, td {
+  table, th, td {
     border: none;
     padding: 5px;
   }

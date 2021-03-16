@@ -30,7 +30,7 @@ const Header = ({ currentUser, hidden }) => (
     </LogoContainer>
     <OptionsContainer>
       <SocialMedia visibility>
-        <a target="_blank" href="https://instagram.com/pipbolland"><Icon icon={instagramLogoLight} /></a>
+        <a target="_blank" href="https://instagram.com/phillyco_?igshid=dqz17tvguhl"><Icon icon={instagramLogoLight} /></a>
       </SocialMedia>
       {/* <OptionLink to='/shop'>SHOP</OptionLink> */}
       <OptionLink to='/about'>ABOUT</OptionLink>
