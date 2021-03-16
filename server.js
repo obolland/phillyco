@@ -33,7 +33,7 @@ app.post('/checkout-data', (req, res) => {
             description: item.selectedSize,
             images: [item.imageUrl],
           },
-          unit_amount: item.price * 100,
+          unit_amount: item.title === 'prints' ? item.sizePrice[item.selectedSize] * 100 : item.price * 100,
         },
       quantity: item.quantity,
     }
@@ -59,9 +59,5 @@ app.post('/create-checkout-session', async (req, res) => {
   res.json({ id: session.id });
 
 });
-
-  // const updateQuantity = firestore.collection('collections').doc('hJf1KZCGqTnTyTJRbVju');
-  // const resp = await updateQuantity.update({size: {large: 9}});
-  // console.log(resp)
 
 app.listen(port, () => console.log(`Running on port ${port}`));

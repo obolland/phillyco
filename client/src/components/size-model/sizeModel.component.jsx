@@ -20,7 +20,7 @@ const SizeModel = ({ modal, setModal, item, addItem }) => {
   }
 
   const newItem = (item) => {
-    return {...item, selectedSize: dropdownValue}
+    return {...item, selectedSize: dropdownValue.toLowerCase()}
   }
 
   return (
@@ -33,9 +33,9 @@ const SizeModel = ({ modal, setModal, item, addItem }) => {
             { item.title === 'prints' ?
             <p>
               <ul>
-                <li>Small - A5</li>
-                <li>Medium - A4</li>
-                <li>Large - A3</li>
+                <li>Small - A5 - £9.99</li>
+                <li>Medium - A4 - £15.99</li>
+                <li>Large - A3 - £20.99</li>
               </ul>
               All prints are hand drawn and printed on 270gsm, white velvet archival paper for a crisp,
               detailed finish with a minimalist feel.<br/>

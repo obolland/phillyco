@@ -64,4 +64,8 @@ export const CustomButtonContainer = styled.button`
     css`
       margin: 5px;
     `};
+
+    @media screen and (max-width: 411px) {
+    font-size: 12px;
+    }
 `;

@@ -1,20 +1,14 @@
 import React from 'react';
 
-import {FooterContainer, SocialContainer, TheCreatorContainer, CopyrightContainer} from './footer.styles';
-
-import { Icon } from '@iconify/react';
-import instagramLogoLight from '@iconify/icons-ph/instagram-logo-light';
+import {FooterContainer, TheCreatorContainer, CopyrightContainer, OptionLink, OptionsContainer} from './footer.styles';
 
 const Footer = () => (
     <FooterContainer>
-        <SocialContainer>
-            <span>
-                <a target="_blank" href="https://instagram.com/pipbolland">
-                <Icon icon={instagramLogoLight} /></a>
-            </span>
-        </SocialContainer>
+        <OptionsContainer>
+            <OptionLink to='/delivery-returns'>Delivery & Returns</OptionLink>
+        </OptionsContainer>
         <CopyrightContainer>
-            PhillyCo© All Rights Reserved
+            <span>PhillyCo© All Rights Reserved</span>
         </CopyrightContainer>
         <TheCreatorContainer>
         <a href="https://ollybolland.com" target="_blank">Created by ollybolland.com</a>

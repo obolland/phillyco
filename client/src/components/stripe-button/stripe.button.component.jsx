@@ -21,17 +21,17 @@ const StripeCheckoutButton = ( {handleClick, isSignedIn } ) => {
     return (
           isSignedIn ? (
             <CustomButton id="checkout-button" role="link" onClick={handleClick}>
-            Checkout
+              Checkout
             </CustomButton>
           ) :
           (
             <ButtonContainer>
             <CustomButton onClick={handleCreateAccountClick} margin>
-            Create Account
+              Create Account
             </CustomButton>
 
             <CustomButton id="checkout-button" role="link" onClick={handleClick}>
-            Checkout As Guest
+              Checkout As Guest
             </CustomButton>
             </ButtonContainer> 
           )

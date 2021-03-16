@@ -20,19 +20,22 @@ import {
   CheckoutPageContainer,
   CheckoutHeaderContainer,
   HeaderBlockContainer,
-  TotalContainer,
-  WarningContainer
+  WarningContainer,
+  TotalsContainer
 } from './checkout.styles';
 
 //note add in .env
-const stripePromise = loadStripe("pk_test_51HyeIDAxgCFzf4P5rxdxA4ySaIq9fggg5nFFMX0DfYieCRejAkDsMyqTn4CRp2jTkqkfsAhid9EhYBiAnfwGIwDu00TPPoRkAk");
+const stripePromise = loadStripe("pk_test_51IMxMtKpm1GeJPFbXJ4y1kmUKngDr8J3sodWE5cr52KrKNvQ6imM6eYc2KMHNFM38uIKceHYlXIgZv0EP6Bwj62A00B3Ee7MEV");
 
 const CheckoutPage = ({ cartItems, total, emptyCart }) => {
   const [message, setMessage] = useState("");
+  const deliveryCost = 3.50;
+  const subTotal = Math.round((total + Number.EPSILON) * 100) / 100; //rounding total to 2 decimal places
+  const _total = Math.round(((subTotal + deliveryCost) + Number.EPSILON) * 100) / 100
+  const _cartItems = [...cartItems, {name: 'Shipping', selectedSize: 'Shipping', imageUrl: "https://i2.lensdump.com/i/IdGcUD.png", price: 3.50, title: 'shipping', quantity: 1}]
 
   const handleClick = async (event) => {
-
-    axios.post('/checkout-data', cartItems)
+    axios.post('/checkout-data', _cartItems)
     .then(function (response) {
       console.log(response);
     })
@@ -90,7 +93,26 @@ return message ? (<Message message={message} /> )
     {cartItems.map(cartItem => (
       <CheckoutItem key={cartItem.id} cartItem={cartItem} />
     ))}
-    <TotalContainer>TOTAL: £{total}</TotalContainer>
+    {/* <SubTotalContainer>SUB-TOTAL: £{_total}</SubTotalContainer>
+    <DeliveryContainer>DELIVERY: £3.50</DeliveryContainer>
+    <TotalContainer>TOTAL: £{_total}</TotalContainer> */}
+    { cartItems[0] &&
+      <TotalsContainer>
+      <tr>
+        <th className='smaller'>SUB-TOTAL:</th>
+        <td className='smaller'>£{subTotal}</td>
+      </tr>
+      <tr>
+        <th className='smaller'>DELIVERY:</th>
+        <td className='smaller'>£{deliveryCost + '0'}</td>
+      </tr>
+      <tr>
+        <th>TOTAL:</th>
+        <td>£{_total}
+        </td>
+      </tr>
+      </TotalsContainer>
+    }
     <StripeCheckoutButton handleClick={handleClick} />
     <WarningContainer>
       *Please use the following test credit card for payments*

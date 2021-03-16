@@ -13,8 +13,10 @@ const AboutPage = () => (
           We have so much respect for this insane planet and what it has to offer us, 
           that we want to do what we can to support it. Our aim is to use sustainable, 
           carbon neutral materials and zero plastic in our packaging, so you can look 
-          after the planet whilst looking cool AF doing it. All art works are hand drawn on paper, 
-          before being screen printed on to our quality materials. 
+          after the planet whilst looking cool AF doing it.<br/>
+          All our garments are made from <b>100% combed oganic cotton, screen printed with eco-friendly inks,
+          CO2 climate neutral, fair Wear Accredited and Peta approved vegan. </b>
+          All art works are hand drawn on paper, before being screen printed on to our quality materials. 
           This is clothing for those with freedom in their hearts and fire in their souls.<br/><u>Live free</u>
         </MainText>
     </AboutPageContainer>

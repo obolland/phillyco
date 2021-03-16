@@ -7,6 +7,7 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import AboutPage from './pages/about/about.component';
 import ContactPage from './pages/contact/contact.component';
+import DeliveryReturnsPage from './pages/delivery-returns/deliveryReturns';
 import LifestylePage from './pages/lifestyle/lifestyle.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
@@ -51,6 +52,7 @@ const App = ({ setCurrentUser, currentUser }) => {
           <Route path='/shop' component={ShopPage} />
           <Route path='/about' component={AboutPage} />
           <Route path='/contact' component={ContactPage} />
+          <Route path='/delivery-returns' component={DeliveryReturnsPage} />
           <Route path='/lifestyle' component={LifestylePage} />
           <Route exact path='/signin' render={() => currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />} />
           <Route exact path='/checkout' component={CheckoutPage} />

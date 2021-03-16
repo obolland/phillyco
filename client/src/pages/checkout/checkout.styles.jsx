@@ -32,17 +32,29 @@ export const HeaderBlockContainer = styled.div`
     width: 8%;
   }
   @media screen and (max-width: 800px) {
-    width: 22%
+    width: 22%;
     &:last-child {
       width: 12%;
     }
   }
 `;
 
-export const TotalContainer = styled.div`
+export const SubTotalContainer = styled.div`
   margin-top: 30px;
   margin-left: auto;
+  font-size: 30px;
+`;
+
+export const TotalContainer = styled.div`
+  margin-top: 10px;
+  margin-left: auto;
   font-size: 36px;
+`;
+
+export const DeliveryContainer = styled.div`
+  margin-top: 10px;
+  margin-left: auto;
+  font-size: 30px;
 `;
 
 export const WarningContainer = styled.div`
@@ -50,4 +62,17 @@ export const WarningContainer = styled.div`
   margin-top: 40px;
   font-size: 24px;
   color: red;
+`;
+
+export const TotalsContainer = styled.div`
+margin-left: auto;
+margin-top: 30px;
+font-size: 30px;
+  th, td {
+    border: none;
+    padding: 5px;
+  }
+  .smaller {
+    font-size: 20px;
+  }
 `;
