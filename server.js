@@ -2,7 +2,6 @@
 const cors = require('cors');
 const express = require('express');
 const path = require('path');
-// const firestore = require('./client/src/firebase/firebase.utils')
 
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
@@ -42,10 +41,10 @@ app.post('/checkout-data', (req, res) => {
 })
 
 
-const YOUR_DOMAIN = process.env.NODE_ENV !== "production" ? 
-'http://localhost:3000/checkout' : 'https://phillyco-live.herokuapp.com/checkout';
-
 app.post('/create-checkout-session', async (req, res) => {
+  const YOUR_DOMAIN = process.env.NODE_ENV !== "production" ? 
+  'http://localhost:3000/checkout' : `https://${req.get("host")}${req.url}/checkout`;
+
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     shipping_address_collection: {
