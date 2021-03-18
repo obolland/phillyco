@@ -40,10 +40,10 @@ app.post('/checkout-data', (req, res) => {
     res.send('Checkout data Added Successfuly')
 })
 
-
+//https://${req.get("host")}${req.url}/checkout
 app.post('/create-checkout-session', async (req, res) => {
   const YOUR_DOMAIN = process.env.NODE_ENV !== "production" ? 
-  'http://localhost:3000/checkout' : `https://${req.get("host")}${req.url}/checkout`;
+  'http://localhost:3000/checkout' : `https://${req.get("host")}/checkout`;
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
