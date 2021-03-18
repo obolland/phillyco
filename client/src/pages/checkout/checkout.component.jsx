@@ -24,7 +24,7 @@ import {
 } from './checkout.styles';
 
 //note add in .env
-const stripePromise = loadStripe("pk_test_51IMxMtKpm1GeJPFbXJ4y1kmUKngDr8J3sodWE5cr52KrKNvQ6imM6eYc2KMHNFM38uIKceHYlXIgZv0EP6Bwj62A00B3Ee7MEV");
+const stripePromise = loadStripe("pk_live_51IMxMtKpm1GeJPFbVieyBGhJvVjdYTGku03XM63o1Ocu7nuNy1lDC3jhsdYof8zGWyetbCZ9rJkOpaV00Ca4ySbr00o4eiGsuO");
 
 const CheckoutPage = ({ cartItems, total, emptyCart }) => {
   const [message, setMessage] = useState("");
